@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class GithubService {
   private username:string
   private myRepos: any
+
 
   constructor(private http:HttpClient) { 
     this.username="josphat-otieno"
