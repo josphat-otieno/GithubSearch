@@ -1,1 +1,27 @@
-<p>my-profile works!</p>
+<div class="container">
+    <h1>WELCOME TO MY gITHUB PORTFOLIO</h1>
+    <hr>
+    <div class="row">
+        <div class="col-md-6">
+            <div *ngIf='profile'>
+                <div class="panel panel-default">
+                    <div class="panel-heading">{{profile.name}}</div>
+                </div>
+                <div class="panel-body">
+                    <img src="{{profile.avatar_url}}" alt="profile photo" class="img-circle img-responsive">
+                    <ul class="list-group">
+                        <li class="list-group-item">GitHub Username: {{profile.login}}</li>
+                        <li class="list-group-item">Twitter Username: {{profile.twitter_username}}</li>
+                        <li class="list-group-item">Bio: {{profile.bio}}</li>
+                        <li class="list-group-item">Bootcamp: {{profile.company}}</li>
+                        <li class="list-group-item">Total number of public repositories: {{profile.public_repos}}</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <app-my-repositories></app-my-repositories>
+</div>
+
+
