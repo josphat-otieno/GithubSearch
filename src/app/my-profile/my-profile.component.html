@@ -19,6 +19,12 @@
         </div>
       </div>
     </div>
-    
+    <div class="col-md-6">
+      <div *ngFor='let repo of repos'>
+        <ul>
+          <li><a href="{{repo.html_url}}">{{repo.name}}</a> <br> {{repo.description}}</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
