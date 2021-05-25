@@ -18,7 +18,7 @@ You need a smartphone, laptop, desktop or any gadget sreen accessible to interne
 1. Angualar CLI
 2. Typescript
 3. JavaScript
-4. HTML & CSS
+4. HTML, CSS & BOOTSTRAP
 -Browsers include either: Google Chrome, Mozilla Firefox, Opera, Edge.
 
 ## Set up instructions
