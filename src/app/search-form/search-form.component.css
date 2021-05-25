@@ -1,6 +1,50 @@
 .container{
     margin-top: 60px;
+    background-color:darkcyan;
+    background-attachment: fixed;
 }
 .card{
     margin-top: 10px;
+    background-color: aquamarine;
+}
+.img-circle{
+    border-radius: 4cm;
+    align-self: center;
+    margin-left: 35%;
+    height: 250px;
+    width: 250px;
+}
+.par{
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.info{
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.h1{
+    text-transform: uppercase;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.form-group{
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+.form-control{
+    width: 700px;
+    margin: auto;
+}
+.btn{
+    margin-right: 300px;
+}
+.repoDetail{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 25px;
+
+}
+.a{
+    text-decoration: none;
 }

@@ -1,48 +1,49 @@
 <div class="container">
-<form (ngSubmit)='submitUsername()'>
-    <div class="row">
-        <div class="col-md-12">
-            <input type="text" name="username" id="" [(ngModel)]="username">
-            <button type="submit" class="btn btn-primary">Search GitHub</button>
-        </div>
-    </div>
-</form>
-<div class="row">
-    <div class="col-md-6">
-        <p>{{user.name}}</p>
-        <img src="{{user.avatar_url}}" alt="GitHub Profile Photo" class="img-circle img-responsive">
-        <div class="card">
-            <p>GitHub User Name: {{user.login}}</p>
-        </div>
-        <div class="card">
-            <p>BIO INFO: {{user.bio}}</p>
+  <form (ngSubmit)='submitUsername()'>
+    
+     <div class="form-group">
+        <input type="text" name="username" id="" [(ngModel)]="username" class="form-control">
+        <button type="submit" class="btn btn-primary">Search GitHub</button>
+     </div>
 
-        </div>
+    
+   
+  </form>
+  <div class="row">
+    <div class="col-md-6">
+      <h1 class="h1">YOUR PROFILE</h1>
+      <p>{{user.name}}</p>
+      <img src="{{user.avatar_url}}" alt="GitHub Profile Photo" class="img-circle">
+      <div class="card">
+        <p class="par">GitHub User Name: <span class="info">{{user.login}}</span></p>
+      </div>
+      <div class="card">
+        <p class="par">BIO INFO: <span class="info">{{user.bio}}</span></p>
+     </div> 
         <div class="card">
-            <p>Company: {{user.company}}</p>
-        </div>
-        <div class="card">
-            <p>Total number of repositories: {{user.public_repos}}</p>
-        </div>
+            <p class="par">Company: <span class="info">{{user.company}}</span></p>
+      </div>
+      <div class="card">
+        <p>Total number of repositories:<span>{{user.public_repos}}</span></p>
+      </div>
     </div>
     <div class="col-md-6">
-        <h1>YOUR PUBLIC REPOSITORIES</h1>
-        <div *ngFor='let repoDetail of repoDetails'>
-            <div class="card">
-                <div class="card-header">
-                    <p><a href="{{repoDetail.html_url}}">{{repoDetail.name}}</a></p>
-                    <p>{{repoDetail.updated_at}}</p>
-                </div>
-                <div class="card-body">
-                    <p>{{repoDetail.description}}</p>
-                </div>
-                <div class="card-footer">
-                    <p>Clone this repository using the following link; {{repoDetail.clone_url}}</p>
-                    <p>Language used {{repoDetail.language}}</p>
-                </div>
-            </div>
+      <h1>YOUR PUBLIC REPOSITORIES</h1>
+      <div *ngFor='let repoDetail of repoDetails'>
+        <div class="card">
+          <div class="card-header">
+            <p><a href="{{repoDetail.html_url}}"><span class="repoDetail">{{repoDetail.name}}</span></a></p>
+            <p>{{repoDetail.updated_at |date}}</p>
+          </div>
+          <div class="card-body">
+            <p>{{repoDetail.description}}</p>
+          </div>
+          <div class="card-footer">
+            <p>Clone this repository using the following link; {{repoDetail.clone_url}}</p>
+            <p>Language used {{repoDetail.language}}</p>
+          </div>
         </div>
+      </div>
     </div>
-
-</div>
+  </div>
 </div>
