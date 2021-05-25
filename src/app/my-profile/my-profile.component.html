@@ -8,16 +8,26 @@
         <div class="panel panel-default">
           <div class="panel-heading">{{profile.name}}</div>
         </div>
-        <div class="panel-body">
-          <div><img src="{{profile.avatar_url}}" alt="profile photo" class="img-circle img-responsive"></div>
-          <ul class="list-group">
-            <li class="list-group-item"><span class="info">GitHub Username:</span> {{profile.login}}</li>
-            <li class="list-group-item"><span class="info">Twitter Username: </span>{{profile.twitter_username}}</li>
-            <li class="list-group-item"><span class="info">Bio:</span> {{profile.bio}}</li>
-            <li class="list-group-item"><span class="info">Bootcamp: </span>{{profile.company}}</li>
-            <li class="list-group-item"><span class="info">Total number of public repositories:</span> {{profile.public_repos}}</li>
-          </ul>
+
+        <div><img src="{{profile.avatar_url}}" alt="profile photo" class="img-circle"></div>
+
+        <div class="card">
+          <span class="info">GitHub Username:</span> {{profile.login}}
         </div>
+        <div class="card">
+          <span class="info">Twitter Username: </span>{{profile.twitter_username}}
+        </div>
+        <div class="card">
+          <span class="info">Bio:</span> {{profile.bio}}
+        </div>
+        <div class="card">
+          <span class="info">Bootcamp: </span>{{profile.company}}
+        </div>
+        <div class="card">
+          <span class="info">Total number of public repositories:</span> {{profile.public_repos}}
+        </div>
+
+
       </div>
     </div>
     <div class="col-md-6">
@@ -25,7 +35,7 @@
       <hr>
       <div *ngFor='let repo of repos'>
         <div class="card">
-          <div class="card-heading">
+          <div class="card-header">
             <a href="{{repo.html_url}}" class="repoName">{{repo.name}} </a>
           </div>
           <div class="card-body text-lead">
