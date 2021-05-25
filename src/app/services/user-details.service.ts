@@ -15,27 +15,27 @@ export class UserDetailsService {
 
   constructor(private http:HttpClient) {
     this.user= new User("", "", "", "", "", 0, new Date())
-    this.repository= new Repos("", "", new Date(), "", "")
+    this.repository= new Repos("","", "", new Date(), "", "")
    }
    getUserDetails(username:string){
      interface ApiResponse{
        name:string,
-       profilePhoto:string,
-       userName: string,
-       bioInfo:string,
+       avatar_url:string,
+       login: string,
+       bio:string,
        company:string,
-       repoNumber:number,
-       dateCreated:Date
+       public_repos:number,
+       created_at:Date
      }
      let promise =new Promise<void>((resolve,reject)=>{
        this.http.get<ApiResponse>("https://api.github.com/users/" +username).toPromise().then(response=>{
          this.user.name=response.name
-         this.user.profilePhoto=response.profilePhoto
-         this.user.userName=response.userName
-         this.user.bioInfo=response.bioInfo
+         this.user.avatar_url=response.avatar_url
+         this.user.login=response.login
+         this.user.bio=response.bio
          this.user.company=response.company
-         this.user.repoNumber=response.repoNumber
-         this.user.dateCreated=response.dateCreated
+         this.user.public_repos=response.public_repos
+         this.user.created_at=response.created_at
 
          resolve()
        },error=>{
@@ -43,7 +43,7 @@ export class UserDetailsService {
        })
        this.http.get<any>("https://api.github.com/users/" +username+"/repos").toPromise().then(response=>{
            for(let j=0; j<response.length; j++){
-             this.newUserData=new Repos(response[j].name, response[j].description, response[j].dateUpdate, response[j].cloneUrl, response[j].language);
+             this.newUserData=new Repos(response[j].html_url, response[j].name, response[j].description, response[j].updated_at, response[j].clone_url, response[j].language);
              this.repoData.push(this.newUserData)
            }
            resolve()

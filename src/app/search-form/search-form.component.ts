@@ -12,7 +12,7 @@ import { Repos } from '../repos'
 export class SearchFormComponent implements OnInit {
   user!: User
   repository!: Repos
-  repoDetails = []
+  repoDetails :any= []
   username!: string
   detailsService!: UserDetailsService
   submitUsername() {

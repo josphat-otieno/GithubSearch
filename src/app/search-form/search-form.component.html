@@ -1,5 +1,4 @@
-<hr>
-<hr>
+<div class="container">
 <form (ngSubmit)='submitUsername()'>
     <div class="row">
         <div class="col-md-12">
@@ -8,4 +7,42 @@
         </div>
     </div>
 </form>
-<p>{{user.name}}</p>
+<div class="row">
+    <div class="col-md-6">
+        <p>{{user.name}}</p>
+        <img src="{{user.avatar_url}}" alt="GitHub Profile Photo" class="img-circle img-responsive">
+        <div class="card">
+            <p>GitHub User Name: {{user.login}}</p>
+        </div>
+        <div class="card">
+            <p>BIO INFO: {{user.bio}}</p>
+
+        </div>
+        <div class="card">
+            <p>Company: {{user.company}}</p>
+        </div>
+        <div class="card">
+            <p>Total number of repositories: {{user.public_repos}}</p>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <h1>YOUR PUBLIC REPOSITORIES</h1>
+        <div *ngFor='let repoDetail of repoDetails'>
+            <div class="card">
+                <div class="card-header">
+                    <p><a href="{{repoDetail.html_url}}">{{repoDetail.name}}</a></p>
+                    <p>{{repoDetail.updated_at}}</p>
+                </div>
+                <div class="card-body">
+                    <p>{{repoDetail.description}}</p>
+                </div>
+                <div class="card-footer">
+                    <p>Clone this repository using the following link; {{repoDetail.clone_url}}</p>
+                    <p>Language used {{repoDetail.language}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
