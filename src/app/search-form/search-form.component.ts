@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserDetailsService } from '../services/user-details.service';
+import { User } from '../user'
+import { Repos } from '../repos'
+
 
 @Component({
   selector: 'app-search-form',
@@ -7,17 +10,22 @@ import { UserDetailsService } from '../services/user-details.service';
   styleUrls: ['./search-form.component.css']
 })
 export class SearchFormComponent implements OnInit {
-    username!:string
-    detailsService!:UserDetailsService
-    submitUsername(){
-      this.detailsService.getUserDetails(this.username)
+  user!: User
+  repository!: Repos
+  repoDetails = []
+  username!: string
+  detailsService!: UserDetailsService
+  submitUsername() {
+    this.detailsService.getUserDetails(this.username)
 
-    }
-  constructor(detailsService:UserDetailsService) { 
-    this.detailsService=detailsService
+  }
+  constructor(detailsService: UserDetailsService) {
+    this.detailsService = detailsService
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.user = this.detailsService.user
+    this.repoDetails = this.detailsService.repoData
   }
 
 }

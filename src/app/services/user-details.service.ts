@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { User } from '../user'
 import { Repos } from '../repos'
-import { error } from 'selenium-webdriver';
+
 
 @Injectable({
   providedIn: 'root'
@@ -41,7 +41,7 @@ export class UserDetailsService {
        },error=>{
          reject(error)
        })
-       this.http.get<any>("https://api.github.com/users/" +username +"/repos").toPromise().then(response=>{
+       this.http.get<any>("https://api.github.com/users/" +username+"/repos").toPromise().then(response=>{
            for(let j=0; j<response.length; j++){
              this.newUserData=new Repos(response[j].name, response[j].description, response[j].dateUpdate, response[j].cloneUrl, response[j].language);
              this.repoData.push(this.newUserData)
