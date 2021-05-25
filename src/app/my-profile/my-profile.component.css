@@ -1,0 +1,39 @@
+.container{
+    background-color:darkcyan;
+    margin-top: 56px;
+    
+}
+.text-center{
+    background-attachment: fixed;
+}
+.panel-heading{
+    font-size: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Times New Roman', Times, serif;
+}
+.img{
+    margin: auto;
+    padding: auto;
+    border-radius: 4px;
+}
+.card{
+    margin: 4px;
+    background-color: aquamarine;
+}
+.card-heading{
+    font-size: x-large;
+    margin: auto;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.card-body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+a{
+    text-decoration: none;
+}
+.card-footer{
+    text-align: center;
+    font-style: italic;
+}

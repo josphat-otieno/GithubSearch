@@ -1,6 +1,6 @@
 <div class="container">
-    <!-- <app-search-form></app-search-form> -->
-  <h1>WELCOME TO MY GITHUB PORTFOLIO</h1>
+  <!-- <app-search-form></app-search-form> -->
+  <h1 class="text-center">WELCOME TO MY GITHUB PORTFOLIO</h1>
   <hr>
   <div class="row">
     <div class="col-md-6">
@@ -9,22 +9,32 @@
           <div class="panel-heading">{{profile.name}}</div>
         </div>
         <div class="panel-body">
-          <img src="{{profile.avatar_url}}" alt="profile photo" class="img-circle img-responsive">
+          <div><img src="{{profile.avatar_url}}" alt="profile photo" class="img-circle img-responsive"></div>
           <ul class="list-group">
-            <li class="list-group-item">GitHub Username: {{profile.login}}</li>
-            <li class="list-group-item">Twitter Username: {{profile.twitter_username}}</li>
-            <li class="list-group-item">Bio: {{profile.bio}}</li>
-            <li class="list-group-item">Bootcamp: {{profile.company}}</li>
-            <li class="list-group-item">Total number of public repositories: {{profile.public_repos}}</li>
+            <li class="list-group-item"><span class="info">GitHub Username:</span> {{profile.login}}</li>
+            <li class="list-group-item"><span class="info">Twitter Username: </span>{{profile.twitter_username}}</li>
+            <li class="list-group-item"><span class="info">Bio:</span> {{profile.bio}}</li>
+            <li class="list-group-item"><span class="info">Bootcamp: </span>{{profile.company}}</li>
+            <li class="list-group-item"><span class="info">Total number of public repositories:</span> {{profile.public_repos}}</li>
           </ul>
         </div>
       </div>
     </div>
     <div class="col-md-6">
+      <h1 class="text-center">PUBLIC REPOSITORIES</h1>
+      <hr>
       <div *ngFor='let repo of repos'>
-        <ul>
-          <li><a href="{{repo.html_url}}">{{repo.name}}</a> <br> {{repo.description}}</li>
-        </ul>
+        <div class="card">
+          <div class="card-heading">
+            <a href="{{repo.html_url}}" class="repoName">{{repo.name}} </a>
+          </div>
+          <div class="card-body text-lead">
+            <p>{{repo.description}}</p>
+          </div>
+          <div class="card-footer">
+            <p>{{repo.created_at | date}}</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
