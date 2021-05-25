@@ -46,3 +46,7 @@ a{
     text-align: center;
     font-style: italic;
 }
+.details{
+    font-style: italic;
+    font-weight: bold;
+}

@@ -12,19 +12,19 @@
         <div><img src="{{profile.avatar_url}}" alt="profile photo" class="img-circle"></div>
 
         <div class="card">
-          <span class="info">GitHub Username:</span> {{profile.login}}
+          <p><span class="info">GitHub Username:</span><span class="details">{{profile.login}}</span> </p>
         </div>
         <div class="card">
-          <span class="info">Twitter Username: </span>{{profile.twitter_username}}
+          <p><span class="info">Twitter Username: </span><span class="details">{{profile.twitter_username}}</span></p>
         </div>
         <div class="card">
-          <span class="info">Bio:</span> {{profile.bio}}
+          <p><span class="info">Bio:</span> <span class="details">{{profile.bio}}</span></p>
         </div>
         <div class="card">
-          <span class="info">Bootcamp: </span>{{profile.company}}
+         <p> <span class="info">Bootcamp: </span><span class="details">{{profile.company}}</span></p>
         </div>
         <div class="card">
-          <span class="info">Total number of public repositories:</span> {{profile.public_repos}}
+          <p><span class="info">Total number of public repositories:</span><span class="details"> {{profile.public_repos}}</span></p>
         </div>
 
 
@@ -43,6 +43,7 @@
           </div>
           <div class="card-footer">
             <p>{{repo.created_at | date}}</p>
+            <p>Clone link:"{{repo.clone_url}}"</p>
           </div>
         </div>
       </div>
